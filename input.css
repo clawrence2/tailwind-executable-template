@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* add styling for carousel. added under utilities because it's most specific */
+
+@layer base {
+    h2 {
+        font-family: Jaldi;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 107%;
+        color:black;
+        /* 38.52px */
+        letter-spacing: 3.24px;
+        text-transform: uppercase;
+    }
+}
+
+
+@layer components {
+
+    /* Scrolling Background Hero */
+    .bg_animate_photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        opacity: 100%;
+        box-sizing: border-box;
+        transition: all 2s;
+        opacity: 0%;
+
+    }
+
+    .bg_animation {
+        /* width 100vh would cause scrollbar overflow */
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .active_bg {
+        opacity: 100%;
+    }
+
+
+    /* MENU BAR */
+    /* #nav-menu{
+        transform:translateX(100%); 
+        transition:all .5s;
+        opacity:50%; 
+    } */
+    /* #nav-menu.activated{
+        transform:translateX(0);
+        opacity:100%;
+    } */
+
+}
+
+@layer utilities {
+
+    /* Animate on Scroll */
+    .animate-on-scroll {
+        transition: all 1s;
+        transform: translateY(20px);
+        opacity: 10%;
+    }
+
+    .animate-on-scroll.seeable {
+        opacity: 100%;
+        color: green;
+        transform: translateY(0px);
+    }
+}
